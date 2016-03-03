@@ -1,0 +1,26 @@
+# ROUTE SNIPPETS
+snippet r:c "routing using closure"
+Route::${1:routeVerb}('${2:path}', ['as' => '${3:routName}', function() {
+	$0
+}]);
+$0
+endsnippet
+
+snippet r:ctrl "routing using controllers"
+Route::${1:routeVerb}('${2:path}', [
+	'as' => '${3:routName}',
+	'uses' => '${4:controllerAction}'
+]);
+$0
+endsnippet
+
+# ----------------------------------------------------
+
+# SCHEMA BUILDER SNIPPETS
+snippet fk "add foreign key"
+$table->integer('${1:foreign_key}')->unsigned();
+$table->foreign('$1')
+	  ->references('${2:referredKey}')
+	  ->on('${3:referredTable}')
+	  ->onDelete('cascade');
+endsnippet
