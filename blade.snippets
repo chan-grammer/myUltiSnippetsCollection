@@ -1,0 +1,43 @@
+# FORM BLOCK SNIPPETS
+snippet form "Form container with no parameters"
+{!! Form::open(array(${1:url}, 'class' => 'form')) !!}
+	{!! Form::token() !!}
+	$0
+{!! Form::close() !!}
+endsnippet
+
+snippet form_model "Form container with no parameters"
+{!! Form::model(${1:$model}, array(${2:$url}, 'class' => 'form')) !!}
+	{!! Form::token() !!}
+	$0
+{!! Form::close() !!}
+endsnippet
+
+snippet label "form label"
+{!! Form::label(${1:$name}, ${2:$value}, ${3:$attr}) !!}
+endsnippet
+
+# form elements block
+snippet text "input text"
+{!! Form::text(${1:$name}, ${2:$text}, array('class' => 'form-control')) !!}
+endsnippet
+
+snippet email "input email"
+{!! Form::email(${1:$name}, ${2:$text}, array('class' => 'form-control')) !!}
+endsnippet
+
+snippet password "input password"
+{!! Form::password(${1:$name}, array('class' => 'form-control')) !!}
+endsnippet
+
+snippet select "input select"
+{!! Form::select(${1:$name}, ${2:$default_values[]}, ${3:$selected}) !!}
+endsnippet
+
+snippet date "input date"
+{!! Form::date(${1:$name}, ${4:$default_value}, ${5:$selected}) !!}
+endsnippet
+
+snippet submit "input button"
+{!! Form::submit(${1:$buttonName}, ${2:$attr}) !!}
+endsnippet
